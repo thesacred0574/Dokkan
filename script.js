@@ -71,3 +71,17 @@ document.querySelectorAll(".tilt-card").forEach((card) => {
     card.style.transition = "transform .12s ease, box-shadow .18s ease, border-color .18s ease";
   });
 });
+
+
+document.querySelectorAll('.product-card .btn-primary').forEach((btn, i) => {
+  setInterval(() => {
+    btn.animate(
+      [
+        { transform: 'translateY(0px)', boxShadow: '0 12px 32px rgba(255,79,200,.24)' },
+        { transform: 'translateY(-2px)', boxShadow: '0 18px 38px rgba(255,79,200,.34)' },
+        { transform: 'translateY(0px)', boxShadow: '0 12px 32px rgba(255,79,200,.24)' }
+      ],
+      { duration: 1500, easing: 'ease-in-out' }
+    );
+  }, 3200 + i * 600);
+});

@@ -837,3 +837,59 @@ body::before{
   transform:translateY(-1px);
   box-shadow:0 16px 34px rgba(255,79,200,.26);
 }
+
+
+/* Aggressive sales refinements */
+.badge{
+  margin-top: 6px;
+}
+.scarcity{
+  margin-top: 12px;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,181,98,.10);
+  border: 1px solid rgba(255,181,98,.20);
+  color: #ffd8b4;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  transform: translateZ(20px);
+}
+.product-card .price{
+  text-shadow: 0 0 18px rgba(255,79,200,.18);
+}
+.product-card:hover .price{
+  text-shadow: 0 0 28px rgba(255,79,200,.28);
+}
+.hero-stat strong{
+  color: #fff2fb;
+}
+.hero-points span{
+  border-color: rgba(255,79,200,.14);
+}
+.wallet-note{
+  line-height: 1.65;
+}
+.aggressive-cta-section{
+  padding-top: 8px;
+}
+.aggressive-cta-box{
+  border-radius: 34px;
+  padding: 34px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top right, rgba(255,79,200,.12), transparent 28%),
+    linear-gradient(135deg, rgba(18,12,18,.98), rgba(10,11,16,.98));
+  border: 1px solid rgba(255,79,200,.18);
+  box-shadow: 0 30px 70px rgba(0,0,0,.38), 0 0 26px rgba(255,79,200,.08);
+}
+.aggressive-cta-box p{
+  max-width: 760px;
+  margin: 14px auto 0;
+  color: rgba(255,255,255,.74);
+}
+.contact-box{
+  border-color: rgba(255,79,200,.16);
+}
