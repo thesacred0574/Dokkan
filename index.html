@@ -140,9 +140,9 @@
         <div class="section-head">
           <div>
             <div class="section-eyebrow">Crypto payment</div>
-            <h2>Wallet and QR ready</h2>
+            <h2>Wallet and QR</h2>
           </div>
-          <p>Use crypto payment here, then send proof on Discord. More payment methods are available privately on Discord.</p>
+          <p>Scan the QR or copy the wallet address, then send payment proof on Discord. More payment methods are available privately on Discord.</p>
         </div>
         <div class="wallet-grid perspective-zone">
           <div class="wallet-card tilt-card">
@@ -240,33 +240,5 @@
     </div>
   </footer>
   <script src="script.js"></script>
-<div id="live-sale" class="live-sale">Someone just bought 13K DS</div>
-
-<script>
-const messages=[
-"Someone just bought 12K DS",
-"New order completed",
-"User secured 13K package"
-];
-setInterval(()=>{
-const el=document.getElementById("live-sale");
-el.textContent=messages[Math.floor(Math.random()*messages.length)];
-el.style.opacity="0";
-setTimeout(()=>{el.style.opacity="1";},200);
-},4000);
-
-const hero=document.querySelector(".hero-card");
-if(hero){
-hero.addEventListener("mousemove",(e)=>{
-const x=(e.clientX/window.innerWidth-0.5)*20;
-const y=(e.clientY/window.innerHeight-0.5)*20;
-hero.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
-});
-hero.addEventListener("mouseleave",()=>{
-hero.style.transform="rotateY(0deg) rotateX(0deg)";
-});
-}
-</script>
 </body>
-
 </html>
