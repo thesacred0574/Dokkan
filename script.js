@@ -85,3 +85,18 @@ document.querySelectorAll('.product-card .btn-primary').forEach((btn, i) => {
     );
   }, 3200 + i * 600);
 });
+
+
+// Gentle CTA pulse for stronger focus
+document.querySelectorAll('.sticky-cta .btn-primary, .product-card .btn-primary').forEach((btn, i) => {
+  setInterval(() => {
+    btn.animate(
+      [
+        { transform: 'translateY(0)', boxShadow: '0 12px 32px rgba(255,79,200,.24)' },
+        { transform: 'translateY(-2px)', boxShadow: '0 18px 40px rgba(255,79,200,.34)' },
+        { transform: 'translateY(0)', boxShadow: '0 12px 32px rgba(255,79,200,.24)' }
+      ],
+      { duration: 1500, easing: 'ease-in-out' }
+    );
+  }, 2800 + i * 450);
+});
