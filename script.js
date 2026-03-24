@@ -100,3 +100,55 @@ document.querySelectorAll('.sticky-cta .btn-primary, .product-card .btn-primary'
     );
   }, 2800 + i * 450);
 });
+
+
+const wowMessages=["Someone just secured 12K DS","New buyer opened crypto checkout","13K package got attention","Fast delivery request received"];
+const wowSale=document.getElementById("live-sale");
+if(wowSale){
+  setInterval(()=>{
+    wowSale.textContent=wowMessages[Math.floor(Math.random()*wowMessages.length)];
+    wowSale.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:350,easing:'ease-out'});
+  },4200);
+}
+
+const hero=document.querySelector(".hero-card");
+if(hero && window.matchMedia("(pointer:fine)").matches){
+  hero.addEventListener("mousemove",(e)=>{
+    const r=hero.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-0.5;
+    const y=(e.clientY-r.top)/r.height-0.5;
+    hero.style.transform=`rotateY(${x*10}deg) rotateX(${-y*8}deg)`;
+  });
+  hero.addEventListener("mouseleave",()=>{hero.style.transform="rotateY(0deg) rotateX(0deg)";});
+}
+
+if(window.matchMedia("(pointer:fine)").matches){
+  const dots=[];
+  for(let i=0;i<10;i++){
+    const d=document.createElement("div");
+    d.className="energy-dot";
+    d.style.opacity=String(Math.max(0.15,1-i*0.09));
+    d.style.width=d.style.height=`${10-i*0.5}px`;
+    document.body.appendChild(d);
+    dots.push({el:d,x:0,y:0});
+  }
+  let mx=0,my=0;
+  window.addEventListener("mousemove",(e)=>{mx=e.clientX;my=e.clientY;});
+  function trail(){
+    let x=mx,y=my;
+    dots.forEach((dot,i)=>{
+      dot.x+=(x-dot.x)*(0.35-i*0.02);
+      dot.y+=(y-dot.y)*(0.35-i*0.02);
+      dot.el.style.left=dot.x+"px";
+      dot.el.style.top=dot.y+"px";
+      x=dot.x; y=dot.y;
+    });
+    requestAnimationFrame(trail);
+  }
+  trail();
+}
+
+const revealEls=document.querySelectorAll(".strip-item, .product-card, .trust-card, .wallet-card, .qr-card, .faq-card, .contact-box");
+revealEls.forEach(el=>el.classList.add("wow-reveal"));
+const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add("is-visible");});},{threshold:0.14});
+revealEls.forEach(el=>io.observe(el));
