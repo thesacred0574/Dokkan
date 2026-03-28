@@ -20,7 +20,7 @@ body{
     radial-gradient(circle at top left, rgba(255,181,98,.05), transparent 18%),
     linear-gradient(180deg, #060608 0%, #050507 100%);
   color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:'Inter',Arial,Helvetica,sans-serif;
   line-height:1.55;
   overflow-x:hidden;
 }
@@ -1005,139 +1005,609 @@ body::before{
 }
 
 
-/* WOW working upgrade */
-body::before{
-  content:"";
+/* ========== IMPROVEMENT PACK ========== */
+h1,h2,h3,.brand,.footer-brand,.product-card h3,.trust-card h3,.faq-card h3{
+  font-family:'Syne',Arial,sans-serif;
+}
+.btn{
+  font-family:'Syne',Arial,sans-serif;
+  letter-spacing:.04em;
+}
+#scroll-progress{
   position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,79,200,.08), transparent 18%),
-    radial-gradient(circle at 80% 15%, rgba(255,184,104,.06), transparent 18%),
-    radial-gradient(circle at 50% 80%, rgba(118,87,255,.05), transparent 20%);
-  animation: wowBgShift 12s ease-in-out infinite;
-  z-index:0;
+  top:0;left:0;
+  height:3px;
+  width:0%;
+  background:linear-gradient(90deg,var(--pink),var(--pink-2),var(--gold));
+  z-index:9999;
+  transition:width .1s linear;
+  box-shadow:0 0 10px rgba(255,79,200,.50);
 }
-main, .site-header, .topbar, .sticky-cta, .site-footer { position:relative; z-index:1; }
-
-.hero-card{
-  position:relative;
-  overflow:hidden !important;
-  box-shadow:0 28px 70px rgba(0,0,0,.42),0 0 40px rgba(255,79,200,.10) !important;
-}
-.hero-card::before{
-  content:"";
+.hero-card-headline{
   position:absolute;
-  inset:-20%;
-  background:radial-gradient(circle, rgba(255,79,200,.24), transparent 58%);
-  filter:blur(80px);
-  animation:auraMove 6s ease-in-out infinite;
-  z-index:0;
-}
-.hero-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 50% 30%, rgba(255,255,255,.13), transparent 40%),
-    linear-gradient(120deg, transparent 20%, rgba(255,255,255,.05) 35%, transparent 52%);
-  opacity:.6;
-  animation:flash 5s infinite;
+  bottom:0;left:0;right:0;
+  padding:52px 36px 30px;
+  background:linear-gradient(0deg,rgba(4,4,6,.96) 0%,rgba(4,4,6,.70) 55%,transparent 100%);
+  z-index:3;
   pointer-events:none;
-  z-index:1;
 }
-.hero-card img{ position:relative; z-index:2; }
+.hch-eyebrow{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:rgba(255,215,244,.62);
+  margin-bottom:10px;
+}
+.hch-title{
+  font-family:'Syne',Arial,sans-serif;
+  font-size:clamp(46px,7vw,84px);
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.02em;
+  background:linear-gradient(100deg,#fff 30%,#ff87e9 65%,#ffb562 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hch-sub{
+  margin-top:12px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.52);
+}
+@keyframes featuredPulse{
+  0%,100%{box-shadow:0 0 22px rgba(255,181,98,.12),var(--shadow);}
+  50%{box-shadow:0 0 48px rgba(255,181,98,.28),var(--shadow);}
+}
+.product-card.featured{
+  animation:featuredPulse 3.2s ease-in-out infinite;
+}
+.reveal{
+  opacity:0;
+  transition:opacity .7s ease;
+}
+.reveal.visible{
+  opacity:1;
+}
+.wallet-address{
+  font-family:'Inter',monospace;
+  font-size:15px;
+  letter-spacing:.01em;
+}
 
-.product-card,.trust-card,.wallet-card,.qr-card,.faq-card,.contact-box,.strip-item{
+
+/* ========== CHESS PREMIUM — Dragon Ball Edition ========== */
+.chess-section{
+  padding:56px 0 72px;
   position:relative;
   overflow:hidden;
 }
-.product-card::after,.trust-card::after,.wallet-card::after,.qr-card::after,.faq-card::after,.contact-box::after,.strip-item::after{
-  content:"";
-  position:absolute; inset:0; border-radius:inherit; pointer-events:none;
-  background:linear-gradient(135deg, rgba(255,255,255,.04), transparent 38%, rgba(255,79,200,.05));
-}
-.product-card:hover{
-  transform:translateY(-10px) scale(1.025) !important;
-  box-shadow:0 38px 90px rgba(0,0,0,.46),0 0 40px rgba(255,79,200,.14) !important;
-}
-.price{
-  position:relative;
-  animation:priceGlow 3s ease-in-out infinite;
-}
-.price::after{
-  content:"";
+.chess-section::before{
+  content:'';
   position:absolute;
-  left:-8%; top:0; width:26%; height:100%;
-  background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-  transform:skewX(-18deg) translateX(-260%);
-  animation:priceShimmer 4.8s ease-in-out infinite;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 60%, rgba(255,90,0,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 40%, rgba(255,160,0,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 40%, rgba(255,60,0,.05) 0%, transparent 60%);
   pointer-events:none;
+  z-index:0;
 }
-.qr-card{
-  box-shadow:0 24px 54px rgba(0,0,0,.30),0 0 24px rgba(255,79,200,.10) !important;
+.chess-section .container{position:relative;z-index:1;}
+.chess-wrap{display:flex;justify-content:center;}
+.chess-ui{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:22px;
+  width:100%;
+  max-width:640px;
 }
-.qr-card::before{
-  content:"";
-  position:absolute;
-  inset:12px;
-  border-radius:18px;
-  border:1px solid rgba(255,79,200,.14);
-  box-shadow:0 0 18px rgba(255,79,200,.10);
-  animation:ringPulse 3.2s ease-in-out infinite;
-  pointer-events:none;
-}
-.qr-image{
-  animation:qrFloat 4.6s ease-in-out infinite;
-  box-shadow:0 20px 46px rgba(0,0,0,.28),0 0 24px rgba(255,79,200,.12) !important;
-}
-.btn-primary{ animation:buttonPulse 3s ease-in-out infinite; }
-.btn-primary:hover{ filter:brightness(1.05); }
-
-.live-sale{
-  position:fixed;
-  bottom:92px;
-  left:16px;
-  background:rgba(20,20,30,.92);
-  border:1px solid rgba(255,79,200,.2);
-  padding:12px 16px;
-  border-radius:14px;
-  font-size:14px;
-  z-index:999;
-  box-shadow:0 16px 34px rgba(0,0,0,.32),0 0 16px rgba(255,79,200,.08);
-  backdrop-filter:blur(10px);
-}
-
-.energy-dot{
-  position:fixed;
-  width:10px; height:10px;
+.chess-status{
+  font-family:'Syne',Arial,sans-serif;
+  font-size:17px;
+  font-weight:800;
+  color:#fff;
+  text-align:center;
+  padding:12px 30px;
   border-radius:999px;
+  background:rgba(255,110,0,.12);
+  border:1px solid rgba(255,140,0,.28);
+  letter-spacing:.04em;
+  min-width:270px;
+  transition:background .3s, border-color .3s;
+  box-shadow:0 0 18px rgba(255,100,0,.10);
+}
+.chess-status.thinking{background:rgba(180,40,255,.12);border-color:rgba(160,60,255,.28);box-shadow:0 0 18px rgba(160,60,255,.12);}
+.chess-status.check{background:rgba(220,40,40,.16);border-color:rgba(255,80,80,.38);}
+.chess-status.gameover{background:linear-gradient(90deg,rgba(255,140,0,.18),rgba(255,60,0,.14));border-color:rgba(255,140,0,.35);}
+
+/* Board frame — Dragon Ball energy glow */
+.chess-board-frame{
+  display:flex;
+  gap:0;
+  align-items:flex-start;
+  padding:16px 16px 8px 8px;
+  background:linear-gradient(145deg,#2a1008,#1a0602);
+  border-radius:22px;
+  box-shadow:
+    0 0 0 2px rgba(255,140,0,.30),
+    0 0 0 5px rgba(200,60,0,.14),
+    0 40px 90px rgba(0,0,0,.72),
+    0 0 80px rgba(255,100,0,.16);
+}
+.chess-board-col{display:flex;flex-direction:column;}
+.chess-coords-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  height:min(540px,calc(90vw - 56px));
+  padding:0 6px 0 4px;
+}
+.chess-coords-bottom{
+  display:flex;
+  justify-content:space-around;
+  padding:6px 0 0;
+  width:min(540px,calc(90vw - 56px));
+}
+.chess-coord{
+  font-size:11px;
+  font-weight:700;
+  color:rgba(255,160,40,.65);
+  font-family:'Inter',monospace;
+  line-height:1;
+  text-align:center;
+}
+
+/* Board */
+.chess-board{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  width:min(540px,calc(90vw - 56px));
+  height:min(540px,calc(90vw - 56px));
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.55),
+    0 12px 40px rgba(0,0,0,.40);
+}
+
+/* Dragon Ball — orange energy squares */
+.chess-sq-light{background:#d09040;}
+.chess-sq-dark {background:#7a3200;}
+
+.chess-sq{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+}
+
+/* Selected – bright yellow */
+.chess-sq-selected{background:#f6f040 !important;}
+
+/* Last move highlight */
+.chess-sq-light.chess-sq-lastmove{background:#d4bc3a !important;}
+.chess-sq-dark.chess-sq-lastmove {background:#9e8220 !important;}
+
+/* Check glow */
+.chess-sq-check{
+  background:radial-gradient(circle at center,rgba(255,30,30,.9) 20%,rgba(200,40,40,.50) 100%) !important;
+}
+
+/* Hover overlay */
+.chess-sq:hover:not(.chess-sq-selected)::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.14);
   pointer-events:none;
-  background:rgba(255,79,200,.8);
-  box-shadow:0 0 18px rgba(255,79,200,.5);
-  transform:translate(-50%,-50%);
-  z-index:9999;
+  z-index:2;
 }
 
-.wow-reveal{
-  opacity:0;
-  transform:translateY(18px) scale(.985);
-  transition:opacity .6s ease, transform .6s ease;
-}
-.wow-reveal.is-visible{
-  opacity:1;
-  transform:translateY(0) scale(1);
+/* Move hint dot – pulsing */
+.chess-sq-hint::after{
+  content:'';
+  position:absolute;
+  width:33%;height:33%;
+  border-radius:50%;
+  background:rgba(0,0,0,.26);
+  pointer-events:none;
+  z-index:3;
+  animation:hintPulse 1.5s ease-in-out infinite;
 }
 
-@keyframes auraMove{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(20px,-18px) scale(1.1);}}
-@keyframes flash{0%,88%,100%{opacity:.35;}91%{opacity:.85;}94%{opacity:.3;}}
-@keyframes wowBgShift{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-@keyframes qrFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
-@keyframes ringPulse{0%,100%{opacity:.7; transform:scale(1);}50%{opacity:1; transform:scale(1.01);}}
-@keyframes buttonPulse{0%,100%{box-shadow:0 12px 30px rgba(255,79,200,.24);}50%{box-shadow:0 16px 36px rgba(255,79,200,.32);}}
-@keyframes priceGlow{0%,100%{text-shadow:0 0 16px rgba(255,79,200,.18);}50%{text-shadow:0 0 26px rgba(255,79,200,.30);}}
-@keyframes priceShimmer{0%,70%,100%{transform:skewX(-18deg) translateX(-260%);}84%{transform:skewX(-18deg) translateX(420%);}}
+/* Capture ring */
+.chess-sq-capture::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,transparent 54%,rgba(0,0,0,.30) 55%);
+  pointer-events:none;
+  z-index:3;
+  animation:hintPulse 1.5s ease-in-out infinite;
+}
 
-@media (max-width:700px){
-  .live-sale{ left:10px; right:10px; width:auto; bottom:86px; }
+@keyframes hintPulse{
+  0%,100%{opacity:.8;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.10);}
+}
+
+/* Pieces — SVG figurines */
+.chess-piece{
+  z-index:4;
+  pointer-events:none;
+  width:100%;height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.chess-piece svg{
+  width:90%;height:90%;
+  pointer-events:none;
+  transition:transform .14s ease, filter .14s ease;
+  overflow:visible;
+}
+.chess-sq:hover .chess-piece svg{
+  transform:scale(1.18) translateY(-5%);
+}
+.chess-piece-white svg{
+  filter:drop-shadow(0 4px 3px rgba(0,0,0,.50)) drop-shadow(0 0 8px rgba(255,200,50,.20));
+}
+.chess-piece-black svg{
+  filter:drop-shadow(0 4px 3px rgba(0,0,0,.60)) drop-shadow(0 0 10px rgba(160,60,255,.22));
+}
+
+.chess-controls{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+@media(max-width:620px){
+  .chess-board-frame{padding:10px 10px 6px 4px;border-radius:14px;}
+  .chess-coords-left,.chess-coords-bottom{display:none;}
+  .chess-board{
+    width:min(480px,90vw);
+    height:min(480px,90vw);
+  }
+}
+
+
+/* ── Music toggle button ─────────────────────────────────────── */
+.music-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 12px;
+  background: rgba(10, 8, 20, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 140, 0, 0.35);
+  border-radius: 999px;
+  color: #ffcc44;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(255, 100, 0, 0.18), 0 0 0 0 rgba(255,140,0,0.22);
+  transition: border-color .25s, box-shadow .25s, transform .18s;
+  letter-spacing: .03em;
+  overflow: hidden;
+}
+.music-btn:hover {
+  border-color: rgba(255,140,0,.7);
+  box-shadow: 0 6px 32px rgba(255,100,0,.32), 0 0 18px rgba(255,140,0,.18);
+  transform: translateY(-2px);
+}
+
+.music-btn-icon {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform .3s;
+}
+.music-btn.paused .music-btn-icon {
+  transform: scale(0.85);
+  opacity: 0.6;
+}
+
+.music-btn-label {
+  transition: color .25s;
+}
+.music-btn.paused .music-btn-label {
+  color: rgba(255,204,68,0.5);
+}
+
+/* Animated EQ bars */
+.music-btn-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+}
+.music-btn-bars span {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to top, #ff8c00, #ffcc44);
+  animation: eqBar .7s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+.music-btn-bars span:nth-child(1) { height: 6px;  animation-delay: 0s;    animation-duration: .5s; }
+.music-btn-bars span:nth-child(2) { height: 12px; animation-delay: .15s;  animation-duration: .7s; }
+.music-btn-bars span:nth-child(3) { height: 9px;  animation-delay: .07s;  animation-duration: .6s; }
+.music-btn-bars span:nth-child(4) { height: 14px; animation-delay: .22s;  animation-duration: .8s; }
+
+.music-btn.paused .music-btn-bars span {
+  animation: none;
+  height: 3px !important;
+  opacity: 0.35;
+}
+
+@keyframes eqBar {
+  from { transform: scaleY(0.25); opacity: .7; }
+  to   { transform: scaleY(1);    opacity: 1;  }
+}
+
+/* Pulse ring when music starts */
+.music-btn.playing::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255,140,0,.5);
+  animation: musicRing 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes musicRing {
+  0%   { transform: scale(1);    opacity: .7; }
+  100% { transform: scale(1.35); opacity: 0;  }
+}
+
+
+/* ================================================================
+   FULL RESPONSIVE — mobile / tablet / desktop
+   ================================================================ */
+
+/* ── Tablet  (≤ 900px) ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero { padding: 44px 0 28px; }
+  .section { padding: 32px 0; }
+  .chess-section { padding: 40px 0 52px; }
+
+  .faq-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .product-card { padding: 22px; }
+  .product-card h3 { font-size: 28px; }
+  .price { font-size: 38px; }
+
+  .trust-card, .wallet-card, .qr-card { padding: 22px; }
+  .contact-box, .aggressive-cta-box { padding: 26px; border-radius: 26px; }
+
+  .hero-stat strong { font-size: 24px; }
+
+  /* music btn above sticky CTA bar */
+  .music-btn { bottom: 80px; }
+}
+
+/* ── Phone  (≤ 640px) ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .container { width: calc(100% - 24px); }
+
+  /* ─ Topbar ─ */
+  .topbar { font-size: 10px; padding: 9px 12px; letter-spacing: .08em; }
+
+  /* ─ Nav ─ */
+  .nav { min-height: unset; gap: 8px; padding: 10px 0 12px; flex-direction: column; align-items: flex-start; }
+  .brand { font-size: 20px; }
+  .brand-sub { font-size: 9px; }
+  .nav-actions { width: 100%; gap: 8px; flex-wrap: nowrap; }
+  .nav-actions .btn { flex: 1; min-height: 40px; padding: 8px 10px; font-size: 13px; }
+
+  /* ─ Hero ─ */
+  .hero { padding: 24px 0 18px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 0; }
+  .hero-copy-minimal { display: none; }
+  .hero-card { min-height: 360px; border-radius: 20px; }
+  .hero-card-headline { padding: 32px 18px 18px; }
+  .hch-title { font-size: clamp(30px, 10vw, 52px); }
+  .hch-eyebrow { font-size: 9px; letter-spacing: .16em; margin-bottom: 6px; }
+  .hch-sub { font-size: 10px; margin-top: 8px; }
+  .hero-floating-tag { font-size: 10px; padding: 7px 10px; }
+  .tag-a { top: 12px; left: 12px; }
+  .tag-b { bottom: 68px; right: 12px; }
+
+  /* ─ Sections ─ */
+  .section { padding: 24px 0; }
+  .section-head { margin-bottom: 18px; gap: 14px; }
+  h2 { font-size: clamp(24px, 7.5vw, 38px); margin: 10px 0 0; }
+  .section-eyebrow { font-size: 10px; }
+
+  /* ─ Products ─ */
+  .product-grid { grid-template-columns: 1fr; gap: 16px; }
+  .product-card { min-height: unset; padding: 18px; border-radius: 22px; }
+  .product-card h3 { font-size: 24px; margin: 12px 0 6px; }
+  .subtitle { font-size: 11px; }
+  .price { font-size: 32px; margin-top: 14px; }
+  .old-price { font-size: 15px; }
+  .discount { font-size: 12px; }
+  .desc { font-size: 14px; margin-top: 10px; }
+  .features li { font-size: 14px; padding: 6px 0 6px 20px; }
+  .scarcity { font-size: 10px; }
+  .decision-note { font-size: 13px; }
+  .card-actions { gap: 10px; margin-top: 16px; }
+  .btn { min-height: 44px; padding: 10px 18px; }
+
+  /* ─ Conversion strip ─ */
+  .conversion-strip { grid-template-columns: 1fr; gap: 12px; }
+  .strip-item { padding: 16px; border-radius: 18px; }
+  .strip-item strong { font-size: 17px; }
+
+  /* ─ Trust ─ */
+  .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+  .trust-card { padding: 18px; border-radius: 22px; }
+  .trust-card h3 { font-size: 20px; margin: 10px 0 8px; }
+  .trust-card p { font-size: 14px; }
+
+  /* ─ FAQ ─ */
+  .faq-grid { grid-template-columns: 1fr; gap: 12px; }
+  .faq-card { padding: 16px; border-radius: 18px; }
+  .faq-card h3 { font-size: 18px; }
+  .faq-card p { font-size: 14px; }
+
+  /* ─ Crypto / Wallet ─ */
+  .wallet-grid { grid-template-columns: 1fr; gap: 16px; }
+  .wallet-card, .qr-card { padding: 18px; border-radius: 22px; }
+  .wallet-address { font-size: 12px; padding: 12px 13px; border-radius: 14px; }
+  .wallet-actions { flex-direction: column; }
+  .wallet-actions .btn { width: 100%; }
+
+  /* ─ Contact / CTA ─ */
+  .contact-box { padding: 20px 16px; border-radius: 20px; text-align: left; }
+  .contact-box p { text-align: left; }
+  .aggressive-cta-box { padding: 20px 16px; border-radius: 20px; }
+  .aggressive-cta-box p { text-align: left; }
+  .centered { justify-content: flex-start; }
+
+  /* ─ Chess ─ */
+  .chess-section { padding: 28px 0 40px; }
+  .chess-ui { gap: 14px; }
+  .chess-status { font-size: 14px; padding: 9px 16px; min-width: unset; width: 100%; border-radius: 16px; }
+  .chess-board-frame { padding: 8px 8px 5px 4px; border-radius: 12px; }
+  .chess-coords-left, .chess-coords-bottom { display: none; }
+  .chess-board {
+    width: min(440px, 92vw);
+    height: min(440px, 92vw);
+  }
+  .chess-controls { gap: 10px; }
+  .chess-controls .btn { flex: 1; min-height: 42px; }
+
+  /* ─ Footer ─ */
+  .site-footer { padding: 16px 0 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-brand { font-size: 15px; }
+  .footer-sub { font-size: 10px; }
+  .footer-links { gap: 12px; }
+  .footer-links a { font-size: 13px; }
+
+  /* ─ Sticky CTA ─ */
+  .sticky-cta { bottom: 10px; left: 10px; right: 10px; transform: none; justify-content: center; flex-wrap: nowrap; border-radius: 20px; }
+  .sticky-cta .btn { flex: 1; min-height: 42px; font-size: 13px; padding: 9px 12px; }
+
+  /* ─ Music btn — above sticky CTA, icon only ─ */
+  .music-btn { bottom: 72px; right: 14px; padding: 9px 12px; gap: 6px; }
+  .music-btn-label { display: none; }
+
+  /* ─ Orbs — tone down on mobile ─ */
+  .orb-1 { width: 140px; height: 140px; }
+  .orb-2 { width: 100px; height: 100px; }
+  .orb-3 { width: 110px; height: 110px; }
+}
+
+/* ── Small phone  (≤ 400px) ───────────────────────────────── */
+@media (max-width: 400px) {
+  .nav-actions .btn { font-size: 12px; padding: 7px 8px; min-height: 38px; }
+  .hero-card { min-height: 280px; }
+  .hch-title { font-size: 26px; }
+  .price { font-size: 28px; }
+  h2 { font-size: 22px; }
+  .product-card h3 { font-size: 21px; }
+  .trust-card h3 { font-size: 18px; }
+  .chess-board { width: 92vw; height: 92vw; }
+  .music-btn { right: 10px; bottom: 68px; }
+}
+
+/* ── Nav fix: tablet 641-900px — keep buttons in one row ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .nav { min-height: 70px; flex-wrap: nowrap; }
+  .nav-actions { flex-wrap: nowrap; gap: 8px; }
+  .nav-actions .btn { min-height: 42px; padding: 9px 14px; font-size: 14px; white-space: nowrap; }
+  .brand { font-size: 20px; }
+  .brand-sub { font-size: 9px; letter-spacing: .12em; }
+}
+
+/* ── Hero card: tablet ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-card { min-height: 520px; }
+  .hch-title { font-size: clamp(38px, 6vw, 64px); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .wallet-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: repeat(2, 1fr); }
+  .conversion-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Nav: tighter at 641-850px so all 3 buttons fit ── */
+@media (min-width: 641px) and (max-width: 850px) {
+  .nav-actions .btn { padding: 8px 11px; font-size: 13px; min-height: 40px; }
+  .brand { font-size: 18px; }
+}
+
+/* ── On tablet: hide Discord from top nav (it's in the sticky bottom bar) ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .nav-actions .btn:last-child { display: none; }
+}
+
+/* ── Tubes cursor canvas ─────────────────────────────────── */
+#cursor-canvas {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  pointer-events: none;
+  z-index: 9990;
+}
+/* Raise music button above the canvas */
+.music-btn { z-index: 9999; }
+/* Hide tubes on touch devices */
+@media (hover: none) {
+  #cursor-canvas { display: none; }
+}
+
+/* Force cursor canvas to viewport size */
+#cursor-canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+/* Cursor wrap — clips canvas to viewport */
+#cursor-wrap {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9990;
+  overflow: hidden;
+}
+#cursor-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+/* mix-blend-mode:screen — makes WebGL black background invisible,
+   only the bright glowing tubes remain visible over the site */
+#cursor-canvas {
+  mix-blend-mode: screen;
+}
+
+/* Move blend mode to the wrap — this makes the black WebGL bg transparent
+   and only the glowing tubes remain over the site content */
+#cursor-wrap {
+  mix-blend-mode: screen;
+}
+#cursor-canvas {
+  mix-blend-mode: normal; /* reset canvas — wrap handles the blending */
 }

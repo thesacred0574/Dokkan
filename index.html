@@ -6,8 +6,29 @@
   <title>THESACREDZ | Premium Dokkan Accounts • Crypto Ready</title>
   <meta name="description" content="Premium Dokkan accounts with a clean 3D storefront, fast crypto payment, and strong conversion flow." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Tubes cursor canvas -->
+  <div id="cursor-wrap">
+    <canvas id="cursor-canvas"></canvas>
+  </div>
+
+  <!-- Background music -->
+  <audio id="bg-music" src="dragon_ball_super.mp3" loop preload="auto"></audio>
+
+  <!-- Floating music toggle button -->
+  <button id="music-btn" class="music-btn" aria-label="Toggle music" title="Toggle music">
+    <span class="music-btn-icon">♫</span>
+    <span class="music-btn-label">Music</span>
+    <span class="music-btn-bars">
+      <span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <div id="scroll-progress"></div>
   <div class="topbar">Fast delivery within 12 hours • Crypto accepted • Worldwide sales</div>
   <header class="site-header">
     <div class="container nav">
@@ -37,6 +58,11 @@
             <div class="hero-card-inner">
               <img src="assets/hero.png" alt="Anime style hero artwork" />
               <div class="hero-overlay"></div>
+              <div class="hero-card-headline">
+                <div class="hch-eyebrow">Premium Dokkan</div>
+                <div class="hch-title">THESACREDZ</div>
+                <div class="hch-sub">Dragon Stones · Crypto Checkout</div>
+              </div>
             </div>
           </div>
         </div>
@@ -47,15 +73,15 @@
     <section class="section compact-section">
       <div class="container">
         <div class="conversion-strip">
-          <div class="strip-item">
+          <div class="strip-item reveal">
             <span class="strip-label">Fast delivery</span>
             <strong>Usually within 12 hours</strong>
           </div>
-          <div class="strip-item">
+          <div class="strip-item reveal">
             <span class="strip-label">Simple checkout</span>
             <strong>Crypto → proof → delivery</strong>
           </div>
-          <div class="strip-item">
+          <div class="strip-item reveal">
             <span class="strip-label">Extra options</span>
             <strong>More payment methods via Discord</strong>
           </div>
@@ -73,7 +99,7 @@
           <p>Two aggressive offers, fast decision-making, and direct crypto checkout.</p>
         </div>
         <div class="product-grid perspective-zone">
-          <article class="product-card tilt-card">
+          <article class="product-card tilt-card reveal">
             <div class="card-depth"></div>
             <div class="badge">HOT DEAL</div><div class="scarcity">Fast moving offer</div>
             <h3>12,000 DS ACCOUNT</h3>
@@ -87,12 +113,13 @@
               <li>Tutorial completed</li>
               <li>Fast secure delivery</li>
             </ul>
-            <div class="decision-note">Fastest way: choose package, pay crypto, send proof on Discord.</div><div class="decision-note">Best value choice for buyers who want more stones for a small price jump.</div><div class="card-actions">
+            <div class="decision-note">Choose package → pay crypto → send proof on Discord.</div>
+            <div class="card-actions">
               <a href="#crypto" class="btn btn-primary full">Buy With Crypto</a>
               <a href="#contact" class="btn btn-secondary full">Order On Discord</a>
             </div>
           </article>
-          <article class="product-card featured tilt-card"><div class="top-line"></div>
+          <article class="product-card featured tilt-card reveal" data-delay="0.12"><div class="top-line"></div>
             <div class="card-depth"></div>
             <div class="badge">BEST VALUE</div><div class="scarcity">Best close rate</div>
             <h3>13,000 DS ACCOUNT</h3>
@@ -117,17 +144,17 @@
     <section class="section section-soft">
       <div class="container">
         <div class="trust-grid perspective-zone">
-          <div class="trust-card tilt-card">
+          <div class="trust-card tilt-card reveal">
             <div class="section-eyebrow">Delivery</div>
             <h3>Fast delivery</h3>
             <p>Delivery within 12 hours, usually faster after payment proof is sent on Discord.</p>
           </div>
-          <div class="trust-card tilt-card">
+          <div class="trust-card tilt-card reveal">
             <div class="section-eyebrow">Payment</div>
             <h3>Crypto checkout</h3>
             <p>Wallet address and QR are ready on-page so buyers can pay without extra steps.</p>
           </div>
-          <div class="trust-card tilt-card">
+          <div class="trust-card tilt-card reveal">
             <div class="section-eyebrow">Process</div>
             <h3>Direct order flow</h3>
             <p>Buyer chooses package, pays in crypto, sends proof on Discord, and receives account details.</p>
@@ -166,7 +193,7 @@
     
     <section class="section aggressive-cta-section">
       <div class="container">
-        <div class="aggressive-cta-box tilt-card">
+        <div class="aggressive-cta-box tilt-card reveal">
           <div class="section-eyebrow">Ready to order?</div>
           <h2>Choose package. Pay crypto. Send proof.</h2>
           <p>Everything is built to reduce hesitation and push a fast close.</p>
@@ -191,15 +218,15 @@
           <p>Short answers that remove hesitation and help buyers move faster.</p>
         </div>
         <div class="faq-grid">
-          <div class="faq-card">
+          <div class="faq-card reveal">
             <h3>How do I pay?</h3>
             <p>Use the wallet address or QR in the crypto section, then send proof on Discord.</p>
           </div>
-          <div class="faq-card">
+          <div class="faq-card reveal">
             <h3>How fast is delivery?</h3>
             <p>Usually within 12 hours, often faster after payment proof is confirmed.</p>
           </div>
-          <div class="faq-card">
+          <div class="faq-card reveal">
             <h3>More payment methods?</h3>
             <p>Yes. Message on Discord for private payment options.</p>
           </div>
@@ -208,7 +235,7 @@
     </section>
 
     <section id="contact" class="section section-soft">
-      <div class="container contact-box tilt-card">
+      <div class="container contact-box tilt-card reveal">
         <div class="section-eyebrow">Contact</div>
         <h2>Discord: <span>thesacred0574</span></h2>
         <p>After payment, send proof with the package name for fast delivery. For more payment methods, message on Discord.</p>
@@ -219,6 +246,44 @@
       </div>
     </section>
   
+    <section id="chess" class="section chess-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-eyebrow">Mini Game</div>
+            <h2>Play Chess</h2>
+          </div>
+          <p>Challenge the AI while you decide. You play White.</p>
+        </div>
+        <div class="chess-wrap">
+          <div class="chess-ui">
+            <div class="chess-status" id="chess-status">Your turn (White)</div>
+            <div class="chess-board-frame">
+              <div class="chess-coords-left">
+                <span class="chess-coord">8</span><span class="chess-coord">7</span>
+                <span class="chess-coord">6</span><span class="chess-coord">5</span>
+                <span class="chess-coord">4</span><span class="chess-coord">3</span>
+                <span class="chess-coord">2</span><span class="chess-coord">1</span>
+              </div>
+              <div class="chess-board-col">
+                <div class="chess-board" id="chess-board"></div>
+                <div class="chess-coords-bottom">
+                  <span class="chess-coord">a</span><span class="chess-coord">b</span>
+                  <span class="chess-coord">c</span><span class="chess-coord">d</span>
+                  <span class="chess-coord">e</span><span class="chess-coord">f</span>
+                  <span class="chess-coord">g</span><span class="chess-coord">h</span>
+                </div>
+              </div>
+            </div>
+            <div class="chess-controls">
+              <button class="btn btn-secondary" id="chess-new-game">New Game</button>
+              <button class="btn btn-secondary" id="chess-undo">Undo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div class="sticky-cta">
@@ -240,6 +305,42 @@
     </div>
   </footer>
   <script src="script.js"></script>
-  <div id="live-sale" class="live-sale">Someone just secured 13K DS</div>
+  <!-- Tubes cursor effect (WebGL) — Dragon Ball Z colors -->
+  <script type="module">
+    import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
+    const canvas = document.getElementById('cursor-canvas');
+    // Only on desktop (pointer: fine = real mouse)
+    if (canvas && window.matchMedia('(pointer: fine)').matches) {
+      const app = TubesCursor(canvas, {
+        tubes: {
+          colors: ["#ff4fc8", "#ffb562", "#9040e0"],
+          lights: {
+            intensity: 180,
+            colors: ["#ff4fc8", "#ffb562", "#9040e0", "#ffffff"]
+          }
+        }
+      });
+
+      // Make background transparent so site shows through
+      setTimeout(() => {
+        if (app && app.renderer) {
+          app.renderer.setClearColor(0x000000, 0);
+          app.renderer.setPixelRatio(window.devicePixelRatio);
+        }
+      }, 50);
+
+      // Fix canvas to viewport after library sets it to document height
+      function fixSize() {
+        canvas.style.width  = window.innerWidth  + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        if (app && app.renderer) {
+          app.renderer.setSize(window.innerWidth, window.innerHeight);
+          app.renderer.setClearColor(0x000000, 0);
+        }
+      }
+      setTimeout(fixSize, 100);
+      window.addEventListener('resize', fixSize);
+    }
+  </script>
 </body>
 </html>
